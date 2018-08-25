@@ -10,8 +10,8 @@ public class Quiz extends JFrame {
         new Quiz();
     }
 
-    final int WHIDTH_WINDOW = 600;
-    final int HIEGHT_WINDOW = 200;
+    final int WIDTH_WINDOW = 600;
+    final int HEIGHT_WINDOW = 200;
     JPanel mainPane;
     JButton quiz1, quiz2, quiz3; //Кнопки, при нажатии на которые нас перенесёт на соответствующий этап.
 
@@ -29,9 +29,9 @@ public class Quiz extends JFrame {
         quiz2 = new JButton("Викторина вторая");
         quiz3 = new JButton("Викторина третья");
 
-        quiz1.setBounds(50, (HIEGHT_WINDOW / 2) - HIEGHT / 2, WHIDTH, HIEGHT);
-        quiz2.setBounds(50 + WHIDTH + 10, (HIEGHT_WINDOW / 2) - HIEGHT / 2, WHIDTH, HIEGHT);
-        quiz3.setBounds(50 + WHIDTH + 10 + 10 + WHIDTH, (HIEGHT_WINDOW / 2) - HIEGHT / 2, WHIDTH, HIEGHT);
+        quiz1.setBounds(50, (HEIGHT_WINDOW / 2) - HIEGHT / 2, WHIDTH, HIEGHT);
+        quiz2.setBounds(50 + WHIDTH + 10, (HEIGHT_WINDOW / 2) - HIEGHT / 2, WHIDTH, HIEGHT);
+        quiz3.setBounds(50 + WHIDTH + 10 + 10 + WHIDTH, (HEIGHT_WINDOW / 2) - HIEGHT / 2, WHIDTH, HIEGHT);
 
         quiz1.addActionListener(new ButtonListener(quiz1.getText()));
 
@@ -61,7 +61,7 @@ public class Quiz extends JFrame {
     private void toolsWindow() {
         setTitle("Quiz");
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new Dimension(WHIDTH_WINDOW, HIEGHT_WINDOW + 25));
+        setPreferredSize(new Dimension(WIDTH_WINDOW, HEIGHT_WINDOW + 25));
         setResizable(false);
         pack();
         setLocationRelativeTo(null);
@@ -78,7 +78,7 @@ public class Quiz extends JFrame {
         @Override
         public void actionPerformed(ActionEvent e) {
             if(string.equals("Викторина первая")){ // Если нажали на первую кнопку то создаём окно с первой викториной
-
+                new Quiz_one();
             } else if(string.equals("Викторина вторая")) {
 
             } else {
