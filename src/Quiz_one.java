@@ -14,7 +14,6 @@ public class Quiz_one extends JFrame {
     private LinkedList<PlayerPanel> list;
     private JTextField field_q;
     private JButton button;
-    private static int i = 0;
 
     public Quiz_one() {
         list = new LinkedList<PlayerPanel>();
@@ -26,23 +25,9 @@ public class Quiz_one extends JFrame {
     }
 
     private void initPanelResult() {
-        tabResult = new JPanel() {
-//            @Override
-//            protected void paintComponent(Graphics g) {
-//                super.paintComponent(g);
-//
-//                g.drawRect(0, 0, 868, 548);
-//
-//                for (int i = 0; i < Quiz_one.i; i++) {
-//                    for (int j = 0, w = 50, h = 50; j < 11; j++) {
-//                        g.drawRect(i * w, j * h, w, h);
-//                    }
-//                }
-//            }
-        };
-
+        tabResult = new JPanel();
         tabResult.setBounds(70, 20, 870, 550);
-        tabResult.setBackground(Color.ORANGE);
+        tabResult.setBackground(new Color(182, 201, 193));
         tabResult.setLayout(new FlowLayout());
         panel.add(tabResult);
     }
