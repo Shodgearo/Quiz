@@ -2,41 +2,89 @@
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.LinkedList;
 
 public class Quiz_one extends JFrame {
-    final int WHIDTH_WINDOW = 1000;
-    final int HIEGHT_WINDOW = 800;
+    final int WIDTH_WINDOW = 1000;
+    final int HEIGHT_WINDOW = 800;
 
-    private JPanel panel;
+    private JPanel panel, tabResult;
+    private LinkedList<PlayerPanel> list;
     private JTextField field_q;
+    private JButton button;
+    private static int i = 0;
 
     public Quiz_one() {
-        initField();
+        list = new LinkedList<PlayerPanel>();
         initPanel();
+        initButton();
+        initField();
+        initPanelResult();
         initWindow();
+    }
+
+    private void initPanelResult() {
+        tabResult = new JPanel() {
+//            @Override
+//            protected void paintComponent(Graphics g) {
+//                super.paintComponent(g);
+//
+//                g.drawRect(0, 0, 868, 548);
+//
+//                for (int i = 0; i < Quiz_one.i; i++) {
+//                    for (int j = 0, w = 50, h = 50; j < 11; j++) {
+//                        g.drawRect(i * w, j * h, w, h);
+//                    }
+//                }
+//            }
+        };
+
+        tabResult.setBounds(70, 20, 870, 550);
+        tabResult.setBackground(Color.ORANGE);
+        tabResult.setLayout(new FlowLayout());
+        panel.add(tabResult);
+    }
+
+    private void initButton() {
+        button = new JButton("+");
+        button.setBounds(10, 300, 50, 50);
+        button.addActionListener(new AddNewPlayer());
+        panel.add(button);
     }
 
     private void initField() {
         field_q = new JTextField();
         field_q.setFont(new Font("Times New Roman", Font.PLAIN, 34));
         field_q.setBounds(100, 600, 800, 100);
+        panel.add(field_q);
     }
 
     private void initPanel() {
         panel = new JPanel();
 
         panel.setLayout(null);
-        panel.add(field_q);
         add(panel);
     }
 
     private void initWindow() {
         setTitle("Quiz one");
-        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new Dimension(WHIDTH_WINDOW, HIEGHT_WINDOW));
+        setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
+        setPreferredSize(new Dimension(WIDTH_WINDOW, HEIGHT_WINDOW));
         setResizable(true);
         pack();
         setLocationRelativeTo(null);
         setVisible(true);
+    }
+
+    private class AddNewPlayer implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            list.add(new PlayerPanel());
+
+            tabResult.add(list.getLast());
+            pack();
+        }
     }
 }
