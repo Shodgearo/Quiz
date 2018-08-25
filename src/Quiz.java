@@ -2,6 +2,8 @@
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class Quiz extends JFrame {
     public static void main(String[] args) {
@@ -30,6 +32,8 @@ public class Quiz extends JFrame {
         quiz1.setBounds(50, (HIEGHT_WINDOW / 2) - HIEGHT / 2, WHIDTH, HIEGHT);
         quiz2.setBounds(50 + WHIDTH + 10, (HIEGHT_WINDOW / 2) - HIEGHT / 2, WHIDTH, HIEGHT);
         quiz3.setBounds(50 + WHIDTH + 10 + 10 + WHIDTH, (HIEGHT_WINDOW / 2) - HIEGHT / 2, WHIDTH, HIEGHT);
+
+        quiz1.addActionListener(new ButtonListener(quiz1.getText()));
 
         mainPane.add(quiz1);
         mainPane.add(quiz2);
@@ -62,5 +66,24 @@ public class Quiz extends JFrame {
         pack();
         setLocationRelativeTo(null);
         setVisible(true);
+    }
+
+    private class ButtonListener implements ActionListener {
+        private String string;
+
+        public ButtonListener(String string) {
+            this.string = string;
+        }
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            if(string.equals("Викторина первая")){ // Если нажали на первую кнопку то создаём окно с первой викториной
+
+            } else if(string.equals("Викторина вторая")) {
+
+            } else {
+
+            }
+        }
     }
 }
