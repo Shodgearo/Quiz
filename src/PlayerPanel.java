@@ -12,7 +12,7 @@ public class PlayerPanel extends JPanel {
 
     public PlayerPanel() {
         initPics();
-        initButtons();
+        initComponent();
         initFrame();
     }
 
@@ -21,7 +21,7 @@ public class PlayerPanel extends JPanel {
         oval = new ImageIcon("assets\\Oval.png");
     }
 
-    private void initButtons() {
+    private void initComponent() {
         buttons = new JButton[10];
 
         // Create buttons
