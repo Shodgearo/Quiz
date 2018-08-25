@@ -11,12 +11,12 @@ public class Quiz_two extends JFrame {
     final int HEIGHT_WINDOW = 800;
 
     private JPanel panel, tabResult;
-//    private LinkedList<PlayerPanel> list;
+    private LinkedList<PlayerPanel_2> list;
     private JTextField field_q;
     private JButton button;
 
     public Quiz_two() {
-//        list = new LinkedList<PlayerPanel>();
+        list = new LinkedList<PlayerPanel_2>();
         initPanel();
         initButton();
         initField();
@@ -66,10 +66,10 @@ public class Quiz_two extends JFrame {
     private class AddNewPlayer implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
-//            list.add(new PlayerPanel());
-//
-//            tabResult.add(list.getLast());
-//            pack();
+            list.add(new PlayerPanel_2());
+
+            tabResult.add(list.getLast());
+            pack();
         }
     }
 }
