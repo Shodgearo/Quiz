@@ -34,6 +34,8 @@ public class Quiz extends JFrame {
         quiz3.setBounds(50 + WHIDTH + 10 + 10 + WHIDTH, (HEIGHT_WINDOW / 2) - HIEGHT / 2, WHIDTH, HIEGHT);
 
         quiz1.addActionListener(new ButtonListener(quiz1.getText()));
+        quiz2.addActionListener(new ButtonListener(quiz2.getText()));
+        quiz3.addActionListener(new ButtonListener(quiz3.getText()));
 
         mainPane.add(quiz1);
         mainPane.add(quiz2);
@@ -80,7 +82,7 @@ public class Quiz extends JFrame {
             if(string.equals("Викторина первая")){ // Если нажали на первую кнопку то создаём окно с первой викториной
                 new Quiz_one();
             } else if(string.equals("Викторина вторая")) {
-
+                new Quiz_two();
             } else {
 
             }
