@@ -4,9 +4,11 @@ import javax.swing.*;
 import java.awt.*;
 
 public class PlayerPanel_3 extends JPanel {
-    private JTextField scoreField, nameFiled;
+    public JTextField scoreField, nameFiled;
+    private int id;
 
-    public PlayerPanel_3() {
+    public PlayerPanel_3(int id) {
+        this.id = id;
         initComponent();
         initFrame();
     }
@@ -19,7 +21,7 @@ public class PlayerPanel_3 extends JPanel {
         scoreField = new JTextField("0", 10);
         scoreField.setFont(new Font("Times New Roman", Font.BOLD, 22));
         scoreField.setHorizontalAlignment((int) JTextField.CENTER_ALIGNMENT);
-        scoreField.setEditable(false);
+        scoreField.setEditable(true);
 
         add(nameFiled);
         add(scoreField);
