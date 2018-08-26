@@ -57,6 +57,9 @@ public class PlayerPanel_2 extends JPanel {
             int sum = Integer.parseInt(score.getText());
             int i = Integer.parseInt((String)cb.getSelectedItem());
 
+            if(i == 3) cb.setBorder(BorderFactory.createMatteBorder(4, 4, 4, 4, Color.GREEN));
+            else cb.setBorder(BorderFactory.createMatteBorder(4, 4, 4, 4, Color.RED));
+
             sum += i;
             score.setText(String.valueOf(sum));
         }
