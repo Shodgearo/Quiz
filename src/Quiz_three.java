@@ -16,18 +16,35 @@ public class Quiz_three extends JFrame {
     private Panel_IT panel_IT;
     private LinkedList<PlayerPanel_3> list;
     private JButton button;
+    private JLabel label_anime, label_sport, label_it;
 
     public Quiz_three() {
         list = new LinkedList<PlayerPanel_3>();
         initPanels();
+        initLabels();
         initButton();
         initPanelResult();
         initWindow();
     }
 
+    private void initLabels() {
+        label_anime = new JLabel("Anime");
+        label_anime.setBounds(20, 80, 80, 50);
+
+        label_sport = new JLabel("Sport");
+        label_sport.setBounds(20, 270, 80, 50);
+
+        label_it = new JLabel("IT and Internet");
+        label_it.setBounds(10, 460, 100, 50);
+
+        panel.add(label_anime);
+        panel.add(label_sport);
+        panel.add(label_it);
+    }
+
     private void initPanelResult() {
         tabOut = new JPanel();
-        tabOut.setBounds(70, 20, 870, 550);
+        tabOut.setBounds(100, 20, 870, 550);
         tabOut.setBackground(new Color(182, 201, 193));
         tabOut.setLayout(new GridLayout(3, 1, 20, 20));
 
