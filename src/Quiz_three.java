@@ -10,12 +10,13 @@ public class Quiz_three extends JFrame {
     final int WIDTH_WINDOW = 1000;
     final int HEIGHT_WINDOW = 800;
 
+    private int id = 1;
+
     private JPanel panel, tabOut, panel_players;
     private Panel_Anime panel_Anime;
     private Panel_Sport panel_Sport;
     private Panel_IT panel_IT;
-    private LinkedList<PlayerPanel_3> list;
-    private JButton button;
+    private static LinkedList<PlayerPanel_3> list;
     private JLabel label_anime, label_sport, label_it;
 
     public Quiz_three() {
@@ -27,14 +28,19 @@ public class Quiz_three extends JFrame {
         initWindow();
     }
 
+    private JButton button;
+    public static LinkedList<PlayerPanel_3> getList() {
+        return list;
+    }
+
     private void initLabels() {
-        label_anime = new JLabel("Anime");
+        label_anime = new JLabel("Аниме");
         label_anime.setBounds(20, 80, 80, 50);
 
-        label_sport = new JLabel("Sport");
+        label_sport = new JLabel("Спотр");
         label_sport.setBounds(20, 270, 80, 50);
 
-        label_it = new JLabel("IT and Internet");
+        label_it = new JLabel("ИТ и Интернет");
         label_it.setBounds(10, 460, 100, 50);
 
         panel.add(label_anime);
@@ -95,7 +101,9 @@ public class Quiz_three extends JFrame {
     private class AddNewPlayer implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
-            list.add(new PlayerPanel_3());
+            list.add(new PlayerPanel_3(id));
+
+            id++;
 
             panel_players.add(list.getLast());
             pack();
