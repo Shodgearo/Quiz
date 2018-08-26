@@ -37,7 +37,7 @@ public class Quiz_three extends JFrame {
         label_anime = new JLabel("Аниме");
         label_anime.setBounds(20, 80, 80, 50);
 
-        label_sport = new JLabel("Спотр");
+        label_sport = new JLabel("Спорт");
         label_sport.setBounds(20, 270, 80, 50);
 
         label_it = new JLabel("ИТ и Интернет");
