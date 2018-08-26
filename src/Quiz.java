@@ -84,7 +84,7 @@ public class Quiz extends JFrame {
             } else if(string.equals("Викторина вторая")) {
                 new Quiz_two();
             } else {
-
+                new Quiz_three();
             }
         }
     }
