@@ -16,7 +16,7 @@ public class PlayerPanel extends JPanel {
         initFrame();
     }
 
-    private void initPics() { // Грузим крестик и кружок
+    private void initPics() { // пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
         cross = new ImageIcon("assets\\Cross.png");
         oval = new ImageIcon("assets\\Oval.png");
     }
